@@ -58,4 +58,6 @@ No tests are included in the project due to the time limitation. There could be 
 
 A warning may appear from Apollo regarding the cache as not all objects include an ID. If an ID can be fetched, it would probably solve the problem, else a custom merge function would have to be created.
 
+### Pagination / Pull-to-refresh
 
+As of now, the queries are limited to a number of 20 and has no way of displaying more than the 20 most recent objects. This can be solved using pagination, preferably in a dynamical list. Additionally, a pull-to-refresh function would be convenient as well to enable the user to refresh the recent data.
