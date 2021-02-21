@@ -1,12 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
-
-type BlockData = {
-  blockHash: string;
-  height: string;
-  timestamp: { time: string };
-};
+import { BlockData } from '../../types';
 
 interface BlockProps {
   data: BlockData;

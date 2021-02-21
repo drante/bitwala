@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { LoadingMessage } from '../../components';
 import { GET_BLOCK } from '../../query/get-block';
+import { BlockDetailsData } from '../../types';
 
 import styles from './styles';
 
@@ -22,7 +23,7 @@ export const BlockDetailsScreen = ({ route }: BlockDetailsScreenProps) => {
   if (loading) return <LoadingMessage message="Loading block..." />;
   if (error) return <Text>Error! ${error.message}`</Text>;
 
-  const blockData = data.bitcoin.blocks[0];
+  const blockData = data.bitcoin.blocks[0] as BlockDetailsData;
 
   const Section = ({ title, value }: SectionProps) => (
     <View style={styles.section}>

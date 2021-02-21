@@ -1,8 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
-
-type TransactionData = { index: string; date: { date: string } };
+import { TransactionData } from '../../types';
 
 interface TransactionProps {
   data: TransactionData;

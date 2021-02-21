@@ -6,6 +6,7 @@ import { LoadingMessage } from '../../components/loading-message';
 import { useQuery } from '@apollo/client';
 import styles from './styles';
 import { GET_BLOCKS } from '../../query/get-blocks';
+import { BlockData } from '../../types';
 
 export const BlocksScreen = () => {
   const { loading, error, data } = useQuery(GET_BLOCKS);
@@ -18,7 +19,7 @@ export const BlocksScreen = () => {
     navigate('BlockDetails', { hash });
   };
 
-  const blockData = data.bitcoin.blocks;
+  const blockData = data.bitcoin.blocks as Array<BlockData>;
 
   return (
     <View style={styles.container}>
