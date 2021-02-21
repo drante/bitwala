@@ -53,3 +53,9 @@ A custom loading message has been created but for errors, only a simple text com
 ### Testing
 
 No tests are included in the project due to the time limitation. There could be a few tests included in this project, for example using `MockedProvider` from Apollo GraphQL for testing each query, including both success and failure states.
+
+### Address cache problem
+
+A warning may appear from Apollo regarding the cache as not all objects include an ID. If an ID can be fetched, it would probably solve the problem, else a custom merge function would have to be created.
+
+
