@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_BLOCK = gql`
-  query GetBlock($hash: String!) { 
+  query GetBlock($hash: String!) {
     bitcoin {
       blocks(blockHash: { is: $hash }) {
         blockHash
@@ -9,7 +9,7 @@ export const GET_BLOCK = gql`
         difficulty
         height
         timestamp {
-         time
+          time
         }
         transactionCount
       }

@@ -1,21 +1,25 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
-import styles from './styles'
+import { View, Text, TouchableOpacity } from 'react-native';
+import styles from './styles';
 
-type BlockData = { blockHash: string, height: string, timestamp: { time: string } }
+type BlockData = {
+  blockHash: string;
+  height: string;
+  timestamp: { time: string };
+};
 
 interface BlockProps {
-  data: BlockData,
-  onSelect: (hash: string) => void
+  data: BlockData;
+  onSelect: (hash: string) => void;
 }
 
 interface BlockListProps {
-  blockData: Array<BlockData>,
-  onBlockHashSelected: (hash: string) => void
+  blockData: Array<BlockData>;
+  onBlockHashSelected: (hash: string) => void;
 }
 
 const Block = ({ data, onSelect }: BlockProps) => {
-  const { blockHash, height, timestamp } = data
+  const { blockHash, height, timestamp } = data;
 
   return (
     <TouchableOpacity style={styles.block} onPress={() => onSelect(blockHash)}>
@@ -36,13 +40,20 @@ const Block = ({ data, onSelect }: BlockProps) => {
         </View>
       </View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export const BlockList = ({ blockData, onBlockHashSelected }: BlockListProps) => (
+export const BlockList = ({
+  blockData,
+  onBlockHashSelected,
+}: BlockListProps) => (
   <>
     {blockData.map((data) => (
-      <Block key={data.blockHash} data={data} onSelect={(hash) => onBlockHashSelected(hash)} />
+      <Block
+        key={data.blockHash}
+        data={data}
+        onSelect={(hash) => onBlockHashSelected(hash)}
+      />
     ))}
   </>
-)
+);

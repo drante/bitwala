@@ -1,19 +1,19 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import styles from './styles'
+import styles from './styles';
 
-type TransactionData = { index: string, date: { date: string } }
+type TransactionData = { index: string; date: { date: string } };
 
 interface TransactionProps {
-  data: TransactionData,
+  data: TransactionData;
 }
 
 interface TransactionListProps {
-  transactionData: Array<TransactionData>,
+  transactionData: Array<TransactionData>;
 }
 
 const Transaction = ({ data }: TransactionProps) => {
-  const { index, date } = data
+  const { index, date } = data;
 
   return (
     <View style={styles.transaction}>
@@ -30,8 +30,8 @@ const Transaction = ({ data }: TransactionProps) => {
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
 export const TransactionList = ({ transactionData }: TransactionListProps) => (
   /* 
@@ -43,4 +43,4 @@ export const TransactionList = ({ transactionData }: TransactionListProps) => (
       <Transaction key={index} data={data} />
     ))}
   </>
-)
+);
